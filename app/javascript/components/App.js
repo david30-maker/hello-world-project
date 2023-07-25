@@ -6,11 +6,7 @@ import Greeting from './Greeting';
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" component={Greeting} />
-      </Switch>
-    </Router>
+    <h1>Hello React</h1>
   );
 };
 

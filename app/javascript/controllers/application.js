@@ -1,9 +1,7 @@
-import { Application } from "@hotwired/stimulus"
-
-const application = Application.start()
-
-// Configure Stimulus development experience
-application.debug = false
-window.Stimulus   = application
-
-export { application }
+// Entry point for the build script in your package.json
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../components/App';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+console.log(document.getElementById('root'));
+root.render(<App />);
