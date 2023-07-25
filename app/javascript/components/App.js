@@ -1,20 +1,33 @@
-import React, {useEffect, useState} from "react";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Greeting from './Greeting';
 
 const App = () => {
-    const [greeting, setGreeting] = useState("")
-    
-    useEffect(() => {
-        fetch("/api/random_greeting")
-        .then(response => response.json())
-        .then(data => setGreeting(data.message))
-        .catch((error)=> console.error('Error fetching greeting: ', error));
-    }, []);
-    
-    return (
-        <div>
-        <h1>{greeting}</h1>
-        </div>
-    );
-    };
+  return (
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/greeting">Random Greeting</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/greeting">
+            <Greeting />
+          </Route>
+          <Route path="/">
+            <h1>Welcome to the Home Page</h1>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 
 export default App;
