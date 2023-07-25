@@ -1,15 +1,16 @@
+// app/javascript/redux/reducer.js
+
 const initialState = {
-    randomGreeting: '',
-  };
-  
-  const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case 'SET_RANDOM_GREETING':
-        return { ...state, randomGreeting: action.payload };
-      default:
-        return state;
-    }
-  };
-  
-  export default rootReducer;
-  
+  greeting: '',
+};
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'SET_GREETING':
+      return { ...state, greeting: action.payload };
+    default:
+      return state;
+  }
+};
+
+export default reducer;

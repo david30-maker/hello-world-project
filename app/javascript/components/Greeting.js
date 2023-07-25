@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from 'react';
+// app/javascript/components/Greeting.js
 
-const Greeting = () => {
-  const [randomGreeting, setRandomGreeting] = useState('');
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchRandomGreeting } from '../redux/actions';
 
+const Greeting = ({ greeting, fetchRandomGreeting }) => {
   useEffect(() => {
-    fetch('/api/random_greeting')
-      .then((response) => response.json())
-      .then((data) => setRandomGreeting(data.message))
-      .catch((error) => console.error('Error fetching greeting:', error));
-  }, []);
+    fetchRandomGreeting();
+  }, [fetchRandomGreeting]);
 
-  return (
-    <div>
-      <h1>Random Greeting:</h1>
-      <p>{randomGreeting}</p>
-    </div>
-  );
+  return <div>{greeting}</div>;
 };
 
-export default Greeting;
+const mapStateToProps = (state) => ({
+  greeting: state.greeting,
+});
+
+const mapDispatchToProps = {
+  fetchRandomGreeting,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
