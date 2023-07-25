@@ -66,9 +66,6 @@ This is hello world  application
 </ul>
 
 <h1>🚀 Live Demo</h1>
-<a href="">Live Demo</a>
-<h1>Video presentation</h1>
-<a href=d="">Click here</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
