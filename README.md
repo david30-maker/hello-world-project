@@ -59,13 +59,7 @@ This is hello world  application
     <li>Postgresql</li>
   </ul>
 </details>
-
-
-<!-- Features -->
-
 </ul>
-
-<h1>🚀 Live Demo</h1>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
