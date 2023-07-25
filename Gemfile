@@ -73,3 +73,5 @@ end
 
 gem 'pg', '~> 1.5'
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'foreman'
